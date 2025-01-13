@@ -1,0 +1,19 @@
+{
+  "name": "ts-express-twitch.bare-minimum-mono-repo",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./dist/back-end/index.js",
+    "build": "npm run build:back && npm run build:site",
+    "build:back": "tsc --project ./tsconfig.json",
+    "build:site": "tsc --project ./tsconfig-site.json",
+    "dev": "concurrently \"npm run build:back -- --watch\" \"npm run build:site -- --watch\" \"npm run start\""
+  },
+  "dependencies": {
+    "add": "^2.0.6",
+    "express": "^4.21.2",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
